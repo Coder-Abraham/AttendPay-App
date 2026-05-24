@@ -10,12 +10,12 @@ import {
   Image,
   ImageBackground,
   KeyboardAvoidingView, Platform,
+  SafeAreaView,
   ScrollView,
   StyleSheet,
   Text, TextInput, TouchableOpacity,
   View
 } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
 
 // Steps: 0 = QR Scan, 1 = Personal Info, 2 = Security, 3 = Review
 type Step = 0 | 1 | 2 | 3;
