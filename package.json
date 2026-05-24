@@ -49,5 +49,15 @@
     "eslint-config-expo": "~9.1.0",
     "typescript": "~5.3.3"
   },
-  "private": true
+  "private": true,
+  "expo": {
+    "install": {
+      "exclude": [
+        "nativewind",
+        "tailwindcss",
+        "lucide-react-native",
+        "react-native-qrcode-svg"
+      ]
+    }
+  }
 }
