@@ -13,7 +13,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/uict-logo.png",
+        "foregroundImage": "./assets/images/icon.png",
         "backgroundColor": "#0060B8"
       },
       "package": "com.attendpay.app",
