@@ -4,7 +4,7 @@
     "slug": "automated-attendance-app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/uict-logo.png",
     "scheme": "attendpay",
     "userInterfaceStyle": "automatic",
     "ios": {
@@ -13,7 +13,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/icon.png",
+        "foregroundImage": "./assets/images/uict-logo.png",
         "backgroundColor": "#0060B8"
       },
       "package": "com.attendpay.app",
@@ -25,7 +25,7 @@
     },
     "web": {
       "output": "static",
-      "favicon": "./assets/images/icon.png"
+      "favicon": "./assets/images/uict-logo.png"
     },
     "plugins": [
       "expo-router",
