@@ -9,7 +9,6 @@
       "android": {
         "buildType": "apk"
       },
-      "config": "preview.yml",
       "env": {
         "EXPO_NO_DOCTOR": "1",
         "EXPO_DOCTOR_NONINTERACTIVE": "1",
