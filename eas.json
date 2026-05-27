@@ -9,7 +9,6 @@
       "android": {
         "buildType": "apk"
       },
-      "prebuildCommand": "npx expo prebuild --platform android --no-install",
       "env": {
         "EXPO_NO_DOCTOR": "1",
         "EXPO_DOCTOR_NONINTERACTIVE": "1",
@@ -20,7 +19,6 @@
       "android": {
         "buildType": "apk"
       },
-      "prebuildCommand": "npx expo prebuild --platform android --no-install",
       "env": {
         "EXPO_NO_DOCTOR": "1",
         "EXPO_DOCTOR_NONINTERACTIVE": "1",
