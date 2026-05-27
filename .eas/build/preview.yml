@@ -1,0 +1,18 @@
+build:
+  name: AttendPay Android Preview APK
+  steps:
+    - eas/checkout
+    - eas/install_node_modules
+    - run:
+        name: Run expo prebuild
+        command: npx expo prebuild --platform android --no-install
+    - eas/inject_android_credentials:
+        inputs:
+          app_build_gradle_path: android/app/build.gradle
+    - eas/run_gradle:
+        inputs:
+          command: assembleRelease
+    - eas/upload_artifact:
+        inputs:
+          type: build-artifact
+          path: android/app/build/outputs/apk/release/app-release.apk
