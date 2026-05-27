@@ -44,11 +44,11 @@
     "tailwindcss": "^3.4.17"
   },
   "devDependencies": {
-    "@types/react": "~19.0.10",
+    "@types/react": "~18.3.12",
     "cross-env": "^10.1.0",
-    "eslint": "^9.25.0",
-    "eslint-config-expo": "~10.0.0",
-    "typescript": "~5.9.2"
+    "eslint": "^8.57.0",
+    "eslint-config-expo": "~9.1.0",
+    "typescript": "~5.3.3"
   },
   "private": true,
   "expo": {
@@ -57,7 +57,18 @@
         "nativewind",
         "tailwindcss",
         "lucide-react-native",
-        "react-native-qrcode-svg"
+        "react-native-qrcode-svg",
+        "ajv",
+        "@expo/vector-icons",
+        "@react-navigation/bottom-tabs",
+        "@react-navigation/elements",
+        "@react-navigation/native",
+        "react-native-reanimated",
+        "react-native-gesture-handler",
+        "react-native-safe-area-context",
+        "react-native-screens",
+        "react-native-svg",
+        "react-native-web"
       ]
     }
   }
