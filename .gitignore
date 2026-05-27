@@ -45,7 +45,5 @@ app-example
 /android/build.gradle
 /android/gradle.properties
 /android/gradle/
-/android/gradlew
-/android/gradlew.bat
 /android/settings.gradle
 /android/gitignore
