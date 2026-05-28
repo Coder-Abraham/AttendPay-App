@@ -4,7 +4,7 @@
     "slug": "attendpay",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/uict-logo.png",
+    "icon": "./assets/images/icon.png",
     "scheme": "attendpay",
     "userInterfaceStyle": "automatic",
     "ios": {
@@ -13,7 +13,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/uict-logo.png",
+        "foregroundImage": "./assets/images/icon.png",
         "backgroundColor": "#0060B8"
       },
       "package": "com.attendpay.app",
