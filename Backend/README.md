@@ -1,5 +1,8 @@
 # AttendPay – Django Backend
 
+> **Canonical location:** this folder in [AttendPay-App](https://github.com/Coder-Abraham/AttendPay-App) (`Backend/`).  
+> Deploy with Render **Root Directory** = `Backend`, or develop from the monorepo root.
+
 ## Quick Start
 
 ```bash
