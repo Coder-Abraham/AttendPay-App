@@ -17,7 +17,6 @@ import {
   View
 } from 'react-native';
 
-// Steps: 0 = QR Scan, 1 = Personal Info, 2 = Security, 3 = Review
 type Step = 0 | 1 | 2 | 3;
 
 const STEP_LABELS = ['Scan QR', 'Your Info', 'Security', 'Review'];
@@ -26,7 +25,7 @@ export default function SignUpScreen() {
   const router = useRouter();
   const [step, setStep] = useState<Step>(0);
 
-  // QR scan state
+
   const [permission, requestPermission] = useCameraPermissions();
   const [isProcessing, setIsProcessing] = useState(false);
   const [orgData, setOrgData] = useState<EmployeeRegistrationQRData | null>(null);
