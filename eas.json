@@ -10,6 +10,7 @@
         "buildType": "apk"
       },
       "env": {
+        "EXPO_PUBLIC_API_URL": "https://attendpay-backend.onrender.com/api",
         "EXPO_NO_DOCTOR": "1",
         "EXPO_DOCTOR_NONINTERACTIVE": "1",
         "NPM_CONFIG_LEGACY_PEER_DEPS": "true"
@@ -20,6 +21,18 @@
         "buildType": "apk"
       },
       "env": {
+        "EXPO_PUBLIC_API_URL": "https://attendpay-backend.onrender.com/api",
+        "EXPO_NO_DOCTOR": "1",
+        "EXPO_DOCTOR_NONINTERACTIVE": "1",
+        "NPM_CONFIG_LEGACY_PEER_DEPS": "true"
+      }
+    },
+    "local": {
+      "android": {
+        "buildType": "apk"
+      },
+      "env": {
+        "EXPO_PUBLIC_API_URL": "http://10.0.2.2:8000/api",
         "EXPO_NO_DOCTOR": "1",
         "EXPO_DOCTOR_NONINTERACTIVE": "1",
         "NPM_CONFIG_LEGACY_PEER_DEPS": "true"

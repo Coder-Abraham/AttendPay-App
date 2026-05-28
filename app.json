@@ -32,7 +32,7 @@
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/uict-logo.png",
+          "image": "./assets/images/clock.jpg",
           "imageWidth": 200,
           "resizeMode": "contain",
           "backgroundColor": "#0060B8",
