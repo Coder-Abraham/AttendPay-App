@@ -84,11 +84,16 @@ class APIClient {
 
       if (!response.ok) {
         // Django returns errors as { detail: '...' } or { error: '...' } or field errors
+        const firstError = Array.isArray(data)
+          ? data[0]
+          : (typeof data === 'object' && data !== null
+              ? Object.values(data as Record<string, any>)[0]
+              : undefined);
         const msg =
           data?.detail ||
           data?.error  ||
           data?.non_field_errors?.[0] ||
-          Object.values(data)?.[0]?.[0] ||
+          (Array.isArray(firstError) ? firstError[0] : firstError) ||
           `HTTP ${response.status}`;
         return { success: false, error: String(msg) };
       }

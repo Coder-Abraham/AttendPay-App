@@ -11,11 +11,11 @@
     "lint": "expo lint"
   },
   "dependencies": {
-    "ajv": "^8.17.1",
     "@expo/vector-icons": "^14.0.4",
     "@react-navigation/bottom-tabs": "^7.2.0",
     "@react-navigation/elements": "^2.2.0",
     "@react-navigation/native": "^7.0.14",
+    "ajv": "^8.17.1",
     "expo": "~54.0.34",
     "expo-camera": "~17.0.10",
     "expo-constants": "~18.0.13",
@@ -29,11 +29,11 @@
     "expo-status-bar": "~3.0.9",
     "expo-system-ui": "~6.0.9",
     "expo-web-browser": "~15.0.11",
-    "lucide-react-native": "^0.475.0",
+    "lucide-react-native": "^0.268.0",
     "nativewind": "^4.1.23",
-    "react": "19.0.0",
-    "react-dom": "19.0.0",
-    "react-native": "0.79.2",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-native": "0.81.5",
     "react-native-gesture-handler": "~2.24.0",
     "react-native-qrcode-svg": "^6.3.2",
     "react-native-reanimated": "~3.17.0",
@@ -44,11 +44,11 @@
     "tailwindcss": "^3.4.17"
   },
   "devDependencies": {
-    "@types/react": "~18.3.12",
+    "@types/react": "~18.2.43",
     "cross-env": "^10.1.0",
-    "eslint": "^8.57.0",
+    "eslint": "^10.4.0",
     "eslint-config-expo": "~9.1.0",
-    "typescript": "~5.3.3"
+    "typescript": "^5.9.3"
   },
   "private": true,
   "expo": {

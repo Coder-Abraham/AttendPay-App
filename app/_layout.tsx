@@ -1,4 +1,5 @@
-import { Slot, SplashScreen } from 'expo-router';
+import { Slot } from 'expo-router';
+import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
 import { Component, useEffect } from 'react';
 import { ScrollView, Text, TouchableOpacity, View } from 'react-native';
