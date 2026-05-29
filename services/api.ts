@@ -106,6 +106,14 @@ class APIClient {
           data?.non_field_errors?.[0] ||
           (Array.isArray(firstError) ? firstError[0] : firstError) ||
           `HTTP ${response.status}`;
+
+        if (response.status === 503 || response.status === 502) {
+          return {
+            success: false,
+            error: "Backend is starting up. Please wait 30 seconds.",
+          };
+        }
+
         return { success: false, error: String(msg) };
       }
 
