@@ -8,19 +8,20 @@ The login **500** was caused by the database layer failing on every query (wrong
 
 2. In the [Render Dashboard](https://dashboard.render.com/) → your **attendpay-backend** service:
 
-   | Setting | Value |
-   |---------|--------|
-   | **Root Directory** | `Backend` |
-   | **Build Command** | `pip install -r requirements.txt && python manage.py collectstatic --no-input` |
-   | **Start Command** | `python manage.py migrate --no-input && python manage.py seed_data && gunicorn Attendpay.wsgi:application --bind 0.0.0.0:$PORT --workers 2 --timeout 120` |
+   | Setting            | Value                                                                          |
+   | ------------------ | ------------------------------------------------------------------------------ |
+   | **Root Directory** | `Backend`                                                                      |
+   | **Build Command**  | `pip install -r requirements.txt && python manage.py collectstatic --no-input` |
+   | **Start Command**  | `python manage.py migrate --no-input && gunicorn Attendpay.wsgi:application`   |
 
 3. **Environment variables** (required):
 
-   | Key | Value |
-   |-----|--------|
-   | `DATABASE_URL` | From Render PostgreSQL → **Internal Database URL** (or External if using Supabase) |
-   | `SECRET_KEY` | Long random string |
-   | `DEBUG` | `false` |
+   | Key              | Value                                              |
+   | ---------------- | -------------------------------------------------- |
+   | `DATABASE_URL`   | From Render PostgreSQL → **Internal Database URL** |
+   | `PYTHON_VERSION` | `3.10.0`                                           |
+   | `SECRET_KEY`     | Long random string                                 |
+   | `DEBUG`          | `false`                                            |
 
 4. **PostgreSQL**: Create a Render Postgres instance and link `DATABASE_URL` to the web service (Environment → Link database).
 
@@ -46,4 +47,5 @@ Open `https://attendpay-backend.onrender.com/api/health/?debug=1` to see the DB 
 
 - `DATABASE_URL` is set and correct
 - Postgres instance is running (free tier sleeps; first request may take ~50s)
-- Migrations ran (check deploy logs for `migrate` / `seed_data`)
+- Migrations ran (check deploy logs for `migrate`)
+- Ensure `dj-database-url` is used in `settings.py` to parse the connection string.
