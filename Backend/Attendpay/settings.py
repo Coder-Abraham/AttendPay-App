@@ -12,8 +12,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = config('SECRET_KEY', default='django-insecure-o4jzlkk(hop=z+-8c7$l_m4npmc47add^(f^zdb+xccsp@nsyo')
 
-DEBUG = config('DEBUG', default=False, cast=bool)
+# Enable DEBUG for local development by default
+DEBUG = config('DEBUG', default=True, cast=bool)
 
+# Allow all hosts for local development and Android emulator
 ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
@@ -64,28 +66,20 @@ TEMPLATES = [
 WSGI_APPLICATION = 'Attendpay.wsgi.application'
 
 # ── Database ─────────────────────────────────────────────────────────────────
-# Production: set DATABASE_URL (Render PostgreSQL, Supabase, etc.) in the host dashboard.
-# Local dev: omit DATABASE_URL to use SQLite at Backend/db.sqlite3.
-DATABASE_URL = config('DATABASE_URL', default=None)
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
-if DATABASE_URL:
-    # Do not force sslmode=require — Render internal Postgres URLs often break with it.
-    # dj-database-url reads sslmode from the URL query string when present.
-    DATABASES = {
-        'default': dj_database_url.config(
-            default=DATABASE_URL,
-            conn_max_age=600,
-            conn_health_checks=True,
-            ssl_require=False,
-        )
-    }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-        }
-    }
+# If DATABASE_URL is in environment (Render/Production), use it
+if os.environ.get('DATABASE_URL'):
+    DATABASES['default'] = dj_database_url.config(
+        conn_max_age=600,
+        conn_health_checks=True,
+        ssl_require=False
+    )
 
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},

@@ -49,3 +49,19 @@ Open `https://attendpay-backend.onrender.com/api/health/?debug=1` to see the DB 
 - Postgres instance is running (free tier sleeps; first request may take ~50s)
 - Migrations ran (check deploy logs for `migrate`)
 - Ensure `dj-database-url` is used in `settings.py` to parse the connection string.
+
+### Required code for Attendpay/settings.py
+
+Ensure your `DATABASES` setting looks exactly like this to support Render's PostgreSQL:
+
+```python
+import dj_database_url
+import os
+
+DATABASES = {
+    'default': dj_database_url.config(
+        default=os.environ.get('DATABASE_URL'),
+        conn_max_age=600
+    )
+}
+```
