@@ -2,7 +2,7 @@ import Header from '@/components/Header';
 import { BG_IMAGE, Colors } from '@/constants/theme';
 import { useAuth } from '@/context/AuthContext';
 import { useRouter } from 'expo-router';
-import { Eye, EyeOff, Hand, IdCard, Lightbulb, Lock, Plus, Unlock } from 'lucide-react-native';
+import { Eye, EyeOff, Hand, UserCircle2, Lightbulb, Lock, Plus, Unlock } from 'lucide-react-native';
 import { useState } from 'react';
 import {
   ActivityIndicator,
@@ -89,7 +89,7 @@ export default function Home() {
             <View>
               <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6, marginBottom: 10 }}>
                 
-                <IdCard size={18} color={Colors.light.background} />
+                <UserCircle2 size={18} color={Colors.light.background} />
                 <Text style={{ fontSize: 14, fontWeight: '700', color: Colors.light.background }}>
                   Employee ID
                 </Text>

@@ -3,7 +3,7 @@ import { authService } from '@/services/authService';
 import { EmployeeRegistrationQRData } from '@/types/Admin';
 import { CameraView, useCameraPermissions } from 'expo-camera';
 import { useRouter } from 'expo-router';
-import { ArrowLeft, Building2, Check, CheckCircle, IdCard, Lock, Mail, Phone, ScanQrCode, ShieldAlert, User } from 'lucide-react-native';
+import { ArrowLeft, Building2, Check, CheckCircle, UserCircle2, Lock, Mail, Phone, QrCode, ShieldAlert, User } from 'lucide-react-native';
 import { useState } from 'react';
 import {
   ActivityIndicator, Alert,
@@ -171,7 +171,7 @@ export default function SignUpScreen() {
               </Text>
               <TouchableOpacity onPress={requestPermission}
                 style={{ backgroundColor: Colors.light.buttonBackground, paddingVertical: 14, paddingHorizontal: 32, borderRadius: 12, flexDirection: 'row', alignItems: 'center', gap: 10 }}>
-                <ScanQrCode size={20} color="#fff" />
+                <QrCode size={20} color="#fff" />
                 <Text style={{ color: '#fff', fontWeight: '700', fontSize: 16 }}>Grant Camera Access</Text>
               </TouchableOpacity>
               <TouchableOpacity onPress={() => router.back()}>
@@ -201,7 +201,7 @@ export default function SignUpScreen() {
               <Text style={{ color: '#fff', fontSize: 15, fontWeight: '600' }}>Back to Login</Text>
             </TouchableOpacity>
             <View style={{ flexDirection: 'row', alignItems: 'center', gap: 10 }}>
-              <ScanQrCode size={24} color={Colors.light.buttonBackground} />
+              <QrCode size={24} color={Colors.light.buttonBackground} />
               <View>
                 <Text style={{ color: '#fff', fontSize: 18, fontWeight: 'bold' }}>Scan Registration QR</Text>
                 <Text style={{ color: 'rgba(255,255,255,0.7)', fontSize: 13 }}>Ask your admin for the registration QR code</Text>
@@ -305,7 +305,7 @@ export default function SignUpScreen() {
                   <TextInput placeholder="+256 7123 456 78" value={phone} onChangeText={setPhone} keyboardType="phone-pad" placeholderTextColor="rgba(176,212,232,0.5)" style={inputStyle} />
                 </View>
                 <View>
-                  <View style={labelStyle}><IdCard size={16} color={Colors.light.background} /><Text style={labelText}>Employee ID</Text></View>
+                  <View style={labelStyle}><UserCircle2 size={16} color={Colors.light.background} /><Text style={labelText}>Employee ID</Text></View>
                   <TextInput placeholder="e.g, EMP005" value={employeeId} onChangeText={setEmployeeId} autoCapitalize="characters" placeholderTextColor="rgba(176,212,232,0.5)" style={inputStyle} />
                   <Text style={{ fontSize: 11, color: 'rgba(232,244,255,0.6)', marginTop: 6 }}>Your Employee ID will be assigned by your admin</Text>
                 </View>
@@ -359,7 +359,7 @@ export default function SignUpScreen() {
                     { label: 'Full Name', value: name, icon: <User size={14} color={Colors.light.icon} /> },
                     { label: 'Email', value: email, icon: <Mail size={14} color={Colors.light.icon} /> },
                     { label: 'Phone', value: phone, icon: <Phone size={14} color={Colors.light.icon} /> },
-                    { label: 'Employee ID', value: employeeId, icon: <IdCard size={14} color={Colors.light.icon} /> },
+                    { label: 'Employee ID', value: employeeId, icon: <UserCircle2 size={14} color={Colors.light.icon} /> },
                     { label: 'Organization', value: orgData?.organizationName ?? '—', icon: <Building2 size={14} color={Colors.light.icon} /> },
                   ].map(({ label, value, icon }) => (
                     <View key={label} style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingBottom: 12, borderBottomWidth: 1, borderBottomColor: Colors.light.divider }}>

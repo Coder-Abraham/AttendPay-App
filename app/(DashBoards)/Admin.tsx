@@ -10,7 +10,7 @@ import type {
 } from '@/services/adminService';
 import { adminService } from '@/services/adminService';
 import { useRouter } from 'expo-router';
-import { Building2, Check, IdCard, Mail, User } from 'lucide-react-native';
+import { Building2, Check, UserCircle2, Mail, User } from 'lucide-react-native';
 import { useCallback, useEffect, useState } from 'react';
 import {
     ActivityIndicator, Alert, Modal,
@@ -223,7 +223,7 @@ export default function AdminDashboard() {
                   )}
                 </View>
                 <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6 }}>
-                  <IdCard size={14} color={Colors.light.icon} />
+                  <UserCircle2 size={14} color={Colors.light.icon} />
                   <Text style={{ fontSize: 12, color: Colors.light.icon }}>{emp.employee_id}</Text>
                 </View>
                 <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6 }}>
