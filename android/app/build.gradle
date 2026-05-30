@@ -9,16 +9,56 @@ def projectRoot = rootDir.getAbsoluteFile().getParentFile().getAbsolutePath()
  * By default you don't need to apply any configuration, just uncomment the lines you need.
  */
 react {
-    entryFile = file(["node", "-e", "require('expo/scripts/resolveAppEntry')", projectRoot, "android", "absolute"].execute(null, rootDir).text.trim())
-    reactNativeDir = new File(["node", "--print", "require.resolve('react-native/package.json')"].execute(null, rootDir).text.trim()).getParentFile().getAbsoluteFile()
-    hermesCommand = new File(["node", "--print", "require.resolve('react-native/package.json')"].execute(null, rootDir).text.trim()).getParentFile().getAbsolutePath() + "/sdks/hermesc/%OS-BIN%/hermesc"
-    codegenDir = new File(["node", "--print", "require.resolve('@react-native/codegen/package.json', { paths: [require.resolve('react-native/package.json')] })"].execute(null, rootDir).text.trim()).getParentFile().getAbsoluteFile()
-
-    enableBundleCompression = (findProperty('android.enableBundleCompression') ?: false).toBoolean()
-    // Use Expo CLI to bundle the app, this ensures the Metro config
-    // works correctly with Expo projects.
-    cliFile = new File(["node", "--print", "require.resolve('@expo/cli', { paths: [require.resolve('expo/package.json')] })"].execute(null, rootDir).text.trim())
-    bundleCommand = "export:embed"
+    def resolveEntryFile = { ->
+        try {
+            def result = ["node", "-e", "require('expo/scripts/resolveAppEntry')", projectRoot, "android", "absolute"].execute(null, rootDir).text.trim()
+            return file(result ?: "index.js")
+        } catch (e) {
+            return file("index.js")
+        }
+    }
+    
+    def resolveReactNativeDir = { ->
+        try {
+            def result = ["node", "--print", "require.resolve('react-native/package.json')"].execute(null, rootDir).text.trim()
+            return new File(result ?: "node_modules/react-native").getParentFile().getAbsoluteFile()
+        } catch (e) {
+            return new File(projectRoot, "node_modules/react-native").getAbsoluteFile()
+        }
+    }
+    
+    def resolveHermesCommand = { ->
+        try {
+            def result = ["node", "--print", "require.resolve('hermes-compiler/package.json', { paths: [require.resolve('react-native/package.json')] })"].execute(null, rootDir).text.trim()
+            return new File(result ?: "node_modules/hermes-compiler").getParentFile().getAbsolutePath() + "/hermesc/%OS-BIN%/hermesc"
+        } catch (e) {
+            return new File(projectRoot, "node_modules/hermes-compiler").getAbsolutePath() + "/hermesc/%OS-BIN%/hermesc"
+        }
+    }
+    
+    def resolveCodegenDir = { ->
+        try {
+            def result = ["node", "--print", "require.resolve('@react-native/codegen/package.json', { paths: [require.resolve('react-native/package.json')] })"].execute(null, rootDir).text.trim()
+            return new File(result ?: "node_modules/@react-native/codegen").getParentFile().getAbsoluteFile()
+        } catch (e) {
+            return new File(projectRoot, "node_modules/@react-native/codegen").getAbsoluteFile()
+        }
+    }
+    
+    def resolveCliFile = { ->
+        try {
+            def result = ["node", "--print", "require.resolve('@expo/cli', { paths: [require.resolve('expo/package.json')] })"].execute(null, rootDir).text.trim()
+            return new File(result ?: "node_modules/@expo/cli")
+        } catch (e) {
+            return new File(projectRoot, "node_modules/@expo/cli")
+        }
+    }
+    
+    entryFile = resolveEntryFile()
+    reactNativeDir = resolveReactNativeDir()
+    hermesCommand = resolveHermesCommand()
+    codegenDir = resolveCodegenDir()
+    cliFile = resolveCliFile()
 
     /* Folders */
      //   The root of your project, i.e. where "package.json" lives. Default is '../..'
@@ -87,13 +127,13 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace "com.attendpay.app"
+    namespace 'com.attendpay.app'
     defaultConfig {
-        applicationId "com.attendpay.app"
+        applicationId 'com.attendpay.app'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.0"
 
         buildConfigField "String", "REACT_NATIVE_RELEASE_LEVEL", "\"${findProperty('reactNativeReleaseLevel') ?: 'stable'}\""
     }

@@ -1,9 +1,15 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
+ext {
+  kotlinVersion = "2.0.21"
+}
+
 buildscript {
   repositories {
     google()
     mavenCentral()
+    maven { url 'https://www.jitpack.io' }
+    maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
   }
   dependencies {
     classpath('com.android.tools.build:gradle')
@@ -17,6 +23,7 @@ allprojects {
     google()
     mavenCentral()
     maven { url 'https://www.jitpack.io' }
+    maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
   }
 }
 
