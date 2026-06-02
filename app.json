@@ -20,7 +20,11 @@
       "permissions": [
         "ACCESS_FINE_LOCATION",
         "ACCESS_COARSE_LOCATION",
-        "CAMERA"
+        "CAMERA",
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION"
       ]
     },
     "web": {
@@ -59,6 +63,11 @@
     "experiments": {
       "typedRoutes": false
     },
-    "extra": {}
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "bac69196-1d9e-4bb9-af70-0e46e08e134b"
+      }
+    }
   }
 }
