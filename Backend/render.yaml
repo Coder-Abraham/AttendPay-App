@@ -5,12 +5,12 @@ services:
     name: attendpay-backend
     runtime: python
     rootDir: Backend
-    buildCommand: pip install -r requirements.txt && python manage.py migrate --no-input && python manage.py seed_data && python manage.py collectstatic --no-input
-    startCommand: gunicorn Attendpay.wsgi:application --bind 0.0.0.0:$PORT --workers 2 --timeout 120
+    buildCommand: pip install -r requirements.txt && python manage.py collectstatic --no-input
+    startCommand: python manage.py migrate --no-input && gunicorn Attendpay.wsgi:application --bind 0.0.0.0:$PORT --workers 2 --timeout 120
     healthCheckPath: /api/health/
     envVars:
       - key: PYTHON_VERSION
-        value: "3.12.3"
+        value: "3.10.0"
       - key: DEBUG
         value: "false"
       - key: SECRET_KEY
