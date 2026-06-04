@@ -122,9 +122,9 @@ CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
 
 # ── Company GPS coordinates (UICT, Kampala) ──────────────────────────────────
-COMPANY_LATITUDE  = 0.32942
-COMPANY_LONGITUDE = 32.61419
-CLOCK_IN_RADIUS_METERS = 100
+COMPANY_LATITUDE  = 0.32756
+COMPANY_LONGITUDE = 32.61454
+CLOCK_IN_RADIUS_METERS = 1000
 
 # ── APScheduler (background jobs) ────────────────────────────────────────────
 APSCHEDULER_DATETIME_FORMAT = "N j, Y, f:s a"
