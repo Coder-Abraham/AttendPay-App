@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
 import { Stack, useRouter } from "expo-router";
-import { useAuth } from "../../context/AuthContext";
+import { useEffect } from "react";
 import { ActivityIndicator, View } from "react-native";
+import { useAuth } from "../../context/AuthContext";
 
 export default function DashBoardsLayout() {
   const { user, isLoading } = useAuth();
