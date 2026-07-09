@@ -4,7 +4,7 @@
     "strict": true,
     "jsx": "react-jsx",
     "lib": ["ES2017", "DOM"],
-    "ignoreDeprecations": "6.0",
+    "ignoreDeprecations": "5.0",
     "types": ["node"],
     "baseUrl": ".",
     "paths": {

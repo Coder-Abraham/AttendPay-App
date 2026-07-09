@@ -1,32 +1,31 @@
 /** @jsxRuntime classic */
-import React from 'react';
 import Header from '@/components/Header';
 import QRGenerator from '@/components/QRGenerator';
 import { Colors } from '@/constants/theme';
 import { useAuth } from '@/context/AuthContext';
 import type {
-  AdminDashboard,
-  DailyAttendanceReport,
-  EmployeeRecord,
-  QRCodeResponse, SalaryOverviewItem,
+    AdminDashboard,
+    DailyAttendanceReport,
+    EmployeeRecord,
+    QRCodeResponse, SalaryOverviewItem,
 } from '@/services/adminService';
 import { adminService } from '@/services/adminService';
 import { useRouter } from 'expo-router';
 import { Building2, Check, Mail, User, UserCircle2 } from 'lucide-react-native';
 import { useCallback, useEffect, useState } from 'react';
 import {
-  ActivityIndicator, Alert, Modal,
-  ScrollView,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
+    ActivityIndicator, Alert, Modal,
+    ScrollView,
+    Text,
+    TextInput,
+    TouchableOpacity,
+    View,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 type Tab = 'overview' | 'employees' | 'attendance' | 'salary';
 
-export default function AdminDashboard() {
+export default function AdminDashboardScreen() {
   const router   = useRouter();
   const { logout } = useAuth();
 

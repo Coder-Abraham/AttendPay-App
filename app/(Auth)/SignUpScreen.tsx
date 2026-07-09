@@ -3,19 +3,19 @@ import { authService } from '@/services/authService';
 import { EmployeeRegistrationQRData } from '@/types/Admin';
 import { CameraView, useCameraPermissions } from 'expo-camera';
 import { useRouter } from 'expo-router';
-import { ArrowLeft, Building2, Check, CheckCircle, UserCircle2, Lock, Mail, Phone, QrCode, ShieldAlert, User } from 'lucide-react-native';
+import { ArrowLeft, Building2, Check, CheckCircle, Lock, Mail, Phone, QrCode, ShieldAlert, User, UserCircle2 } from 'lucide-react-native';
 import { useState } from 'react';
 import {
-  ActivityIndicator, Alert,
-  Image,
-  ImageBackground,
-  KeyboardAvoidingView, Platform,
-  SafeAreaView,
-  ScrollView,
-  StyleSheet,
-  Text, TextInput, TouchableOpacity,
-  View
+    ActivityIndicator, Alert,
+    Image,
+    ImageBackground,
+    KeyboardAvoidingView, Platform,
+    ScrollView,
+    StyleSheet,
+    Text, TextInput, TouchableOpacity,
+    View
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 type Step = 0 | 1 | 2 | 3;
 

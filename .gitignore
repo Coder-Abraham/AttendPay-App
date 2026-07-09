@@ -45,3 +45,7 @@ app-example
 android/.gradle/
 android/build/
 android/local.properties
+
+# Keep the release APK folder tracked
+!Attend Pay APK/
+!Attend Pay APK/*.apk

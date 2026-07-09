@@ -154,7 +154,7 @@ export default function EmployeeDashboard() {
             <View>
               <Text style={{ fontSize: 28, fontWeight: 'bold', color: Colors.light.text }}>
                 Good {new Date().getHours() < 12 ? 'Morning' : new Date().getHours() < 17 ? 'Afternoon' : 'Evening'},{' '}
-                {user.name ? user.name.split(' ')[0] : 'there'}!
+                {user?.name ? user.name.split(' ')[0] : 'there'}!
               </Text>
               <Text style={{ fontSize: 14, color: Colors.light.icon }}>
                 {new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })}

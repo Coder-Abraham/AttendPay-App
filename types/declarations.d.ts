@@ -26,10 +26,12 @@ declare module 'lucide-react-native' {
   export const Clipboard: React.FC<LucideProps>;
   export const Phone: React.FC<LucideProps>;
   export const ScanQrCode: React.FC<LucideProps>;
+  export const QrCode: React.FC<LucideProps>;
   export const ShieldAlert: React.FC<LucideProps>;
   export const ArrowLeft: React.FC<LucideProps>;
   export const Eye: React.FC<LucideProps>;
   export const EyeOff: React.FC<LucideProps>;
+  export const UserCircle2: React.FC<LucideProps>;
 
   export default React.ComponentType<LucideProps>;
 }
