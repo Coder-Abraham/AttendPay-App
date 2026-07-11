@@ -12,18 +12,14 @@ Poor attendance has led to unfair salary calculations and delays in service deli
 Solution:
 AttendPay provides a simple and efficient mobile platform for recording attendance, improving reliability, and ensuring fair and accurate salary processing.
 
-==================================================================
 HOW TO DOWNLOAD AND INSTALL THE APP ON YOUR ANDROID PHONE
-==================================================================
 
 Prerequisites:
 - An Android device (Android 8.0 or higher recommended)
 - Internet connection
 - At least 200MB of free storage space
 
-------------------------------------------------------------------
 OPTION A: Download Directly on Your Phone (Easiest)
-------------------------------------------------------------------
 
 Step 1 - Open the GitHub repository on your phone's browser:
           https://github.com/Coder-Abraham/AttendPay-App
@@ -49,9 +45,9 @@ Step 7 - Tap "Install" when prompted. The app will install in seconds.
 
 Step 8 - Tap "Open" to launch AttendPay.
 
---------------------------------------------------------------
+
 OPTION B: Download on PC then Transfer to Phone
---------------------------------------------------------------
+
 
 Step 1 - Visit the repository on your PC:
           https://github.com/Coder-Abraham/AttendPay-App
@@ -74,18 +70,16 @@ Step 6 - Enable "Install unknown apps" if prompted (see Step 5 in
 
 Step 7 - Tap "Install" and then "Open" once done.
 
-==============================================================
+
 USING THE APP
-==============================================================
 
 First Launch:
 - The app may take 15-30 seconds to connect on first launch because the
   backend server wakes up from sleep (it is hosted on a free tier).
 - If you see a loading screen, just wait — it will connect automatically.
 
--------------------------------------------------------------
+
 Login Instructions:
--------------------------------------------------------------
 
 Administrator Account
   Employee ID : ADM001
@@ -96,27 +90,27 @@ Employee Accounts
   Password    : emp001 to emp005
   (e.g. EMP002 logs in with password emp002)
 
---------------------------------------------------------
+
 Admin Features:
---------------------------------------------------------
+
 - View attendance dashboard and daily reports
 - Manage employee records
 - Generate QR codes for clock-in and clock-out
 - Assign and view salary information
 - Register new employees by generating a registration QR code
 
------------------------------------------------
+
 Employee Features:
------------------------------------------------
+
 - Register using your organisation's QR code (from Admin)
 - Clock in by scanning the arrival QR code
 - Clock out by scanning the departure QR code
 - View your attendance history
 - View your salary and payroll summary
 
---------------------------------------------------------------
+
 Employee Registration (New User):
---------------------------------------------------------------
+
 1. Ask your Administrator to generate a Registration QR code from the
    Admin dashboard.
 2. Open the AttendPay app and tap "Create Account".
@@ -124,9 +118,8 @@ Employee Registration (New User):
 4. Fill in your details (name, email, phone, password) and submit.
 5. Wait for Admin approval before your first login.
 
-=============================================================
+
 TROUBLESHOOTING
-=============================================================
 
 Login fails or times out:
   - Wait 15 seconds and try again. The backend may be waking up.
@@ -145,17 +138,16 @@ QR code does not scan:
     > Permissions > Camera).
   - Hold the camera steady and ensure the QR code is well-lit.
 
-==============================================================
+
 TECHNICAL INFORMATION
-==============================================================
+
 - Frontend : React Native with Expo
 - Backend  : Django REST Framework hosted on Render (free tier)
 - Database : PostgreSQL
 - Auth     : Token-based authentication
 
-==============================================================
 GROUP MEMBERS
-==============================================================
+
 1. KATANDI ABRAHAM BONNY  2024/DCS/DAY/0632
 2. SSEBADDUKA JOSEPH      2024/DCS/DAY/1729G
 3. OTAI JOSHUA            2024/DCS/DAY/0233
